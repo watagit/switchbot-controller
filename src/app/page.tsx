@@ -8,7 +8,7 @@ export default function Home() {
   const [data, setData] = useState<{ data: GetDeviceList }>();
 
   useEffect(() => {
-    fetch("/api/devices", {}).then((res) => {
+    fetch("/api/devices").then((res) => {
       if (res.ok) {
         res.json().then((data) => setData(data));
       }
