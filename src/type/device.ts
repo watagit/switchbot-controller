@@ -2,7 +2,7 @@ export type NonInfraredDevice = {
   deviceId: string;
   deviceName: string;
   deviceType?: DeviceType;
-  enableCloudServices?: boolean
+  enableCloudServices?: boolean;
   hubDeviceId: string;
   master?: boolean;
 };
