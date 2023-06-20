@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { type GetDeviceList } from "~/app/api/devices/route";
 
 export default function Home() {
