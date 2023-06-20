@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import type { InfraredDevice, NonInfraredDevice } from "~/type/device";
 
-const token = process.env.SWITCHOT_TOKEN!;
+const token = process.env.SWITCHBOT_TOKEN!;
 const secret = process.env.SWITCHBOT_SECRET!;
 
 export type GetDeviceList = {
