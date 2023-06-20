@@ -1,20 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import axios from "axios";
+import useSWR from "swr";
 
 import { type GetDeviceList } from "~/app/api/devices/route";
 
+const fetcher = (url) => axios.get(url).then((res) => res.data);
+
 export default function Home() {
-  const [data, setData] = useState<{ data: GetDeviceList }>();
+  const { data, error } = useSWR<{ data: GetDeviceList }>(
+    "/api/devices",
+    fetcher
+  );
 
-  useEffect(() => {
-    fetch("/api/devices").then((res) => {
-      if (res.ok) {
-        res.json().then((data) => setData(data));
-      }
-    });
-  }, []);
-
+  if (error) return <p>error</p>;
   if (!data) return <p>loading</p>;
   return (
     <main>
